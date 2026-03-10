@@ -2,6 +2,8 @@ import Foundation
 import SwiftUI
 import GoogleGenerativeAI
 
+// swiftlint:disable multiple_closures_with_trailing_closure
+
 @MainActor
 class ChatViewModel: ObservableObject {
     @Published var apiKey: String = "" {

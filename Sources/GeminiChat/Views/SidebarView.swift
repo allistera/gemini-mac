@@ -1,6 +1,9 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+// swiftlint:disable multiple_closures_with_trailing_closure
+// swiftlint:disable unused_closure_parameter
+
 struct SidebarView: View {
     @EnvironmentObject var viewModel: ChatViewModel
     @State private var showingNewFolderAlert = false

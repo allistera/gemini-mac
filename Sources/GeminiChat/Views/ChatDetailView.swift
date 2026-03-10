@@ -4,6 +4,8 @@ import Splash
 import AppKit
 #endif
 
+// swiftlint:disable multiple_closures_with_trailing_closure
+
 struct ChatDetailView: View {
     @EnvironmentObject var viewModel: ChatViewModel
     @State private var inputText: String = ""
@@ -18,12 +20,12 @@ struct ChatDetailView: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
-                .onChange(of: viewModel.currentConversation?.messages.last?.text.count) { _, _ in
+                .onChange(of: viewModel.currentConversation?.messages.last?.text.count) {
                     if viewModel.isSendingMessage {
                         scrollToBottom(proxy: proxy)
                     }
                 }
-                .onChange(of: viewModel.currentConversation?.messages.count) { _, _ in
+                .onChange(of: viewModel.currentConversation?.messages.count) {
                     scrollToBottom(proxy: proxy)
                 }
             }
