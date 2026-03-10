@@ -1,0 +1,18 @@
+included:
+  - Sources
+
+excluded:
+  - .build
+  - Package.swift
+
+# Rules
+disabled_rules:
+  - trailing_whitespace
+  - force_cast
+  - line_length
+  - type_body_length
+  - file_length
+
+opt_in_rules:
+  - empty_count
+  - contains_over_first_not_nil

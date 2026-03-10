@@ -1,0 +1,13 @@
+# Swift Build
+.build/
+
+# macOS
+.DS_Store
+.xcworkspace/
+xcuserdata/
+
+# App Bundle
+GeminiChat.app/
+
+# Package Management
+Package.resolved
