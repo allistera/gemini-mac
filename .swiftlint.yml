@@ -16,6 +16,7 @@ disabled_rules:
   - identifier_name
   - unused_closure_parameter
   - blanket_disable_command
+  - implicit_optional_initialization
 
 opt_in_rules:
   - empty_count

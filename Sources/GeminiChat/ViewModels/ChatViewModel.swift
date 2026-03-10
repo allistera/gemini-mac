@@ -198,7 +198,7 @@ class ChatViewModel: ObservableObject {
             let stream = chat.sendMessageStream(message.text)
             var fullResponse = ""
             
-            for try await chunk in stream {
+            for try await chunk in stream where chunk.text != nil {
                 if let text = chunk.text {
                     fullResponse += text
                     if let index = self.conversations.firstIndex(where: { $0.id == conversation.id }),

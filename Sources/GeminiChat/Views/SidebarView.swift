@@ -140,9 +140,8 @@ struct SidebarView: View {
     }
     
     private func handleDrop(providers: [NSItemProvider], toFolderId: UUID?) -> Bool {
-        for provider in providers {
-            if provider.canLoadObject(ofClass: NSString.self) {
-                provider.loadObject(ofClass: NSString.self) { (uuidString, error) in
+        for provider in providers where provider.canLoadObject(ofClass: NSString.self) {
+            provider.loadObject(ofClass: NSString.self) { (uuidString, error) in
                     if let uuidString = uuidString as? String, let uuid = UUID(uuidString: uuidString) {
                         DispatchQueue.main.async {
                             viewModel.moveConversation(uuid, toFolderId: toFolderId)
