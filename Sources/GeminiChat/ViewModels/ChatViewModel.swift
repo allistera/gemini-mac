@@ -15,7 +15,7 @@ class ChatViewModel: ObservableObject {
     @Published var availableModels: [GeminiModel] = []
     @Published var selectedModelId: String = ""
     @Published var isFetchingModels = false
-    @Published var errorMessage: String? = nil
+    @Published var errorMessage: String?
     
     @Published var conversations: [Conversation] = []
     @Published var folders: [Folder] = []
@@ -133,10 +133,8 @@ class ChatViewModel: ObservableObject {
         if deleteChats {
             conversations.removeAll(where: { $0.folderId == id })
         } else {
-            for i in 0..<conversations.count {
-                if conversations[i].folderId == id {
-                    conversations[i].folderId = nil
-                }
+            for i in 0..<conversations.count where conversations[i].folderId == id {
+                conversations[i].folderId = nil
             }
         }
         folders.removeAll(where: { $0.id == id })

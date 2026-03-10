@@ -7,7 +7,7 @@ struct Conversation: Identifiable, Codable, Equatable {
     var messages: [Message] = []
     var dateCreated: Date = Date()
     var modelId: String = "gemini-1.5-pro"
-    var folderId: UUID? = nil
+    var folderId: UUID?
     
     // Equatable
     static func == (lhs: Conversation, rhs: Conversation) -> Bool {

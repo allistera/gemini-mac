@@ -14,7 +14,7 @@ struct SidebarView: View {
     @State private var convToRename: Conversation?
     @State private var renameConvTitle = ""
     
-    @State private var folderBeingTargeted: UUID? = nil
+    @State private var folderBeingTargeted: UUID?
     @State private var isTargetingUncategorized = false
     
     var body: some View {
