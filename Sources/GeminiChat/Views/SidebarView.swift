@@ -83,11 +83,8 @@ struct SidebarView: View {
                 }
                 .onDelete { indexSet in
                     let convsToDelete = indexSet.map { uncategorized[$0] }
-                    for conv in convsToDelete {
-                        if let index = viewModel.conversations.firstIndex(where: { $0.id == conv.id }) {
-                            viewModel.conversations.remove(at: index)
-                        }
-                    }
+                    let idsToDelete = Set(convsToDelete.map { $0.id })
+                    viewModel.conversations.removeAll(where: { idsToDelete.contains($0.id) })
                 }
             } header: {
                 Text("Uncategorized")

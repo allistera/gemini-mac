@@ -293,7 +293,7 @@ struct MarkdownContentView: View {
         
         var currentBlock: [String] = []
         var isInCodeBlock = false
-        var currentLanguage: String? = nil
+        var currentLanguage: String?
         
         for line in lines {
             let trimmed = line.trimmingCharacters(in: .whitespaces)
